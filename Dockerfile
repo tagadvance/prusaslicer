@@ -25,9 +25,8 @@ ENV LC_ALL=en_US.UTF-8 \
 
 WORKDIR /home/prusa/
 
-RUN git clone https://github.com/prusa3d/PrusaSlicer.git \
-    && cd PrusaSlicer \
-    && git checkout tags/version_${VERSION}
+RUN git clone --depth 1 --branch tags/version_${VERSION} https://github.com/prusa3d/PrusaSlicer.git \
+    && cd PrusaSlicer
 
 WORKDIR /home/prusa/PrusaSlicer/deps
 
