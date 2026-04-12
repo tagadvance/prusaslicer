@@ -8,7 +8,6 @@ ARG VERSION
 
 RUN groupadd --gid ${HOST_GID:-1000} prusa \
     && useradd --uid ${HOST_UID:-1000} --gid ${HOST_GID:-1000} --create-home prusa \
-    && usermod -aG video,render prusa \
     && apt update \
     && apt install -y git build-essential autoconf cmake libglu1-mesa-dev libgtk-3-dev libdbus-1-dev libtool libwebkit2gtk-4.1-dev locales texinfo \
     && apt clean \
