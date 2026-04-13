@@ -1,11 +1,20 @@
 FROM debian:trixie
 
+ARG CREATED
 ARG DEBIAN_FRONTEND=noninteractive
 ARG HOST_UID
 ARG HOST_GID
 ARG JOBS
 ARG VERSION
 ARG SUDO_FORCE_REMOVE=yes
+
+LABEL org.opencontainers.image.title="PrusaSlicer"
+LABEL org.opencontainers.image.description="Unofficial build of PrusaSlicer from source."
+LABEL org.opencontainers.image.version="${VERSION}"
+LABEL org.opencontainers.image.source="https://github.com/tagadvance/prusaslicer"
+LABEL org.opencontainers.image.revision="version_${VERSION}"
+LABEL org.opencontainers.image.vendor="https://github.com/tagadvance"
+LABEL org.opencontainers.image.licenses="GNU Affero General Public License v3.0"
 
 ENV LC_ALL=en_US.UTF-8 \
     LANG=en_US.UTF-8 \
